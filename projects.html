@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+	<title>Projects</title>
+	<link href="stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+<header>
+<nav>
+<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="publications.html">Publications</a></li>
+	<li><a href="projects.html">Projects</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<div style="text-align: center;"><a href="mailto:anravi2@illinois.edu">Email</a> &nbsp;/&nbsp; <a href="data/Aditya_Resume_final.pdf">CV</a> &nbsp;/&nbsp; <a href="https://scholar.google.com/citations?user=VisaHskAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;/&nbsp; <a href="https://github.com/Adityanarayan96">GitHub</a> &nbsp;/&nbsp; <a href="https://www.linkedin.com/in/narayan-aditya/">Linkedin</a></div>
+&nbsp;
+
+<h1>Research Projects</h1>
+
+<h2>Batch Correction in Cell Painting</h2>
+
+<p><img alt="" src="/images/Screenshot 2024-07-24 at 7.46.29 PM.png" style="width: 800px; height: 391px;" /></p>
+
+<p></p>
+
+<p>Batch correction is a crucial step in data analysis, particularly in high-throughput experiments like genomics, transcriptomics, and imaging-based studies. It addresses systematic variations introduced by technical differences across experimental batches, such as changes in equipment, reagents, or processing times, which can obscure biological signals of interest. By applying statistical or machine learning techniques, batch correction aligns data across batches, ensuring that observed differences are driven by true biological variation rather than technical artifacts. This improves the reliability and reproducibility of downstream analyses, such as clustering, classification, and feature extraction.</p>
+
+<h2>Group Testing with Priors</h2>
+
+<p><img alt="" src="/images/Screenshot 2024-07-24 at 7.52.05 PM.png" style="width: 800px; height: 188px;" /></p>
+
+<p>This project explores a novel correlated group testing model designed to capture realistic infection dynamics and biological systems. Unlike traditional group testing, which assumes independent infections, we focus on scenarios where infections occur in bursts, modeled using a Markov chain. This approach reflects real-world scenarios, such as spatially clustered infections or biological phenomena where dependencies play a significant role.</p>
+
+<p>Our contributions include the development of a non-adaptive testing strategy with an efficient decoding scheme that is nearly optimal. The proposed strategy achieves asymptotically vanishing error rates with a number of tests that is within a 1/ln 2 multiplicative factor of the fundamental entropy bound, paralleling results from the independent group testing setting. Importantly, we show that the number of required tests decreases with an increase in the expected burst length of infections, demonstrating the advantage of leveraging correlation in test design.</p>
+
+<p>This work is motivated by several practical applications:<br />
+&nbsp;&nbsp; &nbsp;1.&nbsp;&nbsp; &nbsp;Infection Dynamics: In real-world scenarios, infections often exhibit bursty patterns, such as within households or neighborhoods. Correlated group testing models provide a more realistic framework for designing efficient testing strategies in such settings.<br />
+&nbsp;&nbsp; &nbsp;2.&nbsp;&nbsp; &nbsp;Imaging-Based Spatial Transcriptomics: Technologies like MERFISH and Xenium rely on barcoded probes to simultaneously test the expression of multiple genes in spatially resolved tissue samples. Genes involved in similar regulatory pathways or located near each other on a chromosome tend to activate together, creating natural dependencies. Understanding correlated group testing enables the optimal design of such probes, reducing the number of imaging/testing rounds required.<br />
+&nbsp;&nbsp; &nbsp;3.&nbsp;&nbsp; &nbsp;Non-Adaptive Testing Strategies: Many experimental setups, such as those in spatial transcriptomics, require fixed designs that cannot be adapted once the experiment begins. This motivates the need for robust non-adaptive group testing methods that can account for correlation while maintaining efficiency.</p>
+
+<p>By quantifying the gains from exploiting bursty patterns and dependencies, this research provides insights into optimal test design for correlated systems, bridging the fields of information theory, biology, and data-driven experiments. It has the potential to improve efficiency in applications ranging from public health to advanced biological imaging technologies.</p>
+
+<section>
+<article>
+<h2>Prioritization in Federated Learning</h2>
+<!--                 <p><strong>Researchers:</strong> Aditya Narayan Ravi, <a href="http://www.ilanshomorony.com/">Ilan Shomorony</a></p>
+                <p><strong>Publication:</strong> <a href="https://arxiv.org/pdf/2310.04515.pdf">arXiv, 2023</a></p> -->
+
+<p>Federated Learning (FL) enables collaborative machine learning on decentralized, heterogeneous data without requiring clients to share their raw data. Traditional FL approaches typically assume all clients have equal importance, constructing a global objective based on all clients. However, in many real-world applications, certain clients, referred to as <i>priority clients</i>, hold greater importance. This project introduces <b>Prioritized Federated Learning (PFL)</b>, where the goal is to optimize a weighted mean objective for the priority clients.</p>
+
+<p></p>
+
+<p>A key challenge in PFL is determining how to select non-priority clients whose contributions align well with the objectives of the priority clients while discarding misaligned ones. To address this, we propose <b>FedALIGN (Federated Adaptive Learning with Inclusion of Global Needs)</b>, an algorithm that employs a matching strategy to evaluate non-priority clients based on how similar the model&rsquo;s loss on their data is to the global data. By incorporating only beneficial updates from non-priority clients, FedALIGN ensures mutual benefits: non-priority clients are incentivized to participate when the model performs well on their data, while priority clients gain useful updates and computational resources.</p>
+
+<p></p>
+
+<p>We provide a detailed convergence analysis quantifying the trade-off between client selection and the speed of convergence. Experiments on synthetic and benchmark datasets show that FedALIGN achieves faster convergence and higher test accuracy compared to baseline methods, offering a practical and effective solution for scenarios requiring prioritized federated learning.</p>
+</article>
+
+<article>
+<h2>LexicHash: Sequence Similarity Estimation via Lexicographic Comparison of Hashes</h2>
+<!--                 <p><strong>Researchers:</strong> Grant Greenberg, Aditya Narayan Ravi, <a href="http://www.ilanshomorony.com/">Ilan Shomorony</a></p>
+                <p><strong>Publication:</strong> Bioinformatics, 2023</p> -->
+
+<p>Pairwise sequence alignment is a computationally intensive task, particularly in gene sequencing, where large datasets must be analyzed efficiently. Traditional methods like MinHash approximate sequence similarity by hashing all k-mers in a read and storing the minimum hash value. However, these methods face a tradeoff between sensitivity and precision based on the choice of k.</p>
+
+<p>In this project, we introduce <b>LexicHash</b>, a novel similarity estimation method that overcomes this limitation by being effectively independent of the choice of k. LexicHash achieves the high precision of large-k MinHash and the high sensitivity of small-k MinHash, delivering superior performance. Experimental results demonstrate an average improvement of 20.9% in the area under the Precision-Recall Curve compared to MinHash. Additionally, LexicHash enables an efficient search for the top-T best alignments across all pairs, achieving an O(n) time complexity for finding top-T pairwise similarities, thereby circumventing the O(n^2) scaling of traditional methods.</p>
+
+<h2>The Shotgun Sequencing channel</h2>
+
+<p>This project investigates the theoretical limits of reliable sequence reconstruction in DNA-based storage systems. Building on the shotgun sequencing paradigm, where short reads are sampled from random, unknown locations in the DNA sequence, we address a fundamental question: what read length and coverage depth are required to achieve accurate reconstruction of the original sequence? Unlike traditional DNA sequencing, we focus on a coded scenario, where the DNA sequence being reconstructed is a codeword from a predefined codebook. This approach is particularly relevant for DNA-based storage systems, where redundancy and structure in the codebook can significantly improve efficiency and reliability.</p>
+
+<p>Our main contribution is an exact characterization of the capacity of the shotgun sequencing channel as a function of the read length and coverage depth. Fromn prior work in uncoded sequences,&nbsp; O(n)&nbsp; reads of length greater than&nbsp; 2 log n&nbsp; are necessary to ensure reliable reconstruction of a sequence of length&nbsp; n. Our work shows that, in the coded scenario, the requirements are dramatically reduced: only&nbsp; O(n / \log n)&nbsp; reads of length greater than&nbsp; log n&nbsp; are sufficient for the capacity to approach 1.</p>
+
+<h2>The Torn Paper Channel</h2>
+
+<p>This project focuses on understanding and optimizing communication over a novel type of channel, referred to as the <i>torn-paper channel</i>. Inspired by applications in molecular data storage and forensic reconstruction, this channel introduces significant challenges by breaking a message block into fragments of random lengths, shuffling them out of order, and deleting a random fraction of the fragments.</p>
+
+<p>We rigorously characterize the capacity of the torn-paper channel, providing a closed-form expression for its efficiency. This capacity can be interpreted as&nbsp; F - A , where:</p>
+
+<p>&bull; F&nbsp; represents the <i>coverage fraction</i>, the proportion of the original message captured by the fragments received.</p>
+
+<p>&bull; A&nbsp; is the <i>alignment cost</i>, which quantifies the difficulty of reconstructing the original message due to the lack of order in the fragments.</p>
+
+<p>The project also explores a noisy variant of the torn-paper channel, where fragments are further corrupted by binary symmetric noise. For this scenario, we derive upper and lower bounds on capacity, which also adhere to the&nbsp; F - A&nbsp; framework. These bounds match under specific fragment length distributions and remain approximately tight in cases with fewer short fragments.</p>
+
+<p></p>
+</article>
+</section>
+</main>
+</body>
+</html>
